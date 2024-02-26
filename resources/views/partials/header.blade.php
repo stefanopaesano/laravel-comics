@@ -1,39 +1,54 @@
-@php
-    $links = [
-        [
-            'url' => '/',
-            'label' => 'Home',
-            'active' => true,
-        ],
-        [
-            'url' => '/chi-siamo',
-            'label' => 'Chi siamo',
-            'active' => true,
-        ],
-        [
-            'url' => '/contatti',
-            'label' => 'Contatti',
-            'active' => false,
-        ],
-    ];
-@endphp
+<script>
+export default {
+    data() {
+        return {
+            items: ['CHARACTER', 'COMICS', 'MOVIES', 'TV', 'GAMES', 'COLLECTIBLES', 'VIDEO', 'FANS', 'NEWS', 'SHOP']
+        };
+    },
+    methods: {
+         console.log(items)
+   }
+}
+</script>
 
-<header>
-    <nav>
-        <ul>
-            @foreach ($links as $link)
-                <li>
-                    @if ($link['active'])
-                        <a href="{{ $link['url'] }}">
-                            {{ $link['label'] }}
-                        </a>
-                    @else
-                        <del>
-                            {{ $link['label'] }}
-                        </del>
-                    @endif
-                </li>
-            @endforeach
-        </ul>
-    </nav>
-</header>
+
+    <header>
+        
+        <div class="nav-bar">
+            <div>
+                <img src="C:\Users\stefa\classe 114 boolean\vite-template\dc-logo.png" alt="">
+            </div>
+            <ul class="contenitore-ul active">
+              <li>
+                
+              </li>
+            </ul>
+        </div>
+    </header>
+
+
+<style lang="scss" scoped>
+.nav-bar {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    .contenitore-ul {
+        display: flex;
+        align-items: center;
+        margin-left: 500px;
+        > li {
+            list-style: none;
+            padding: 0px;
+            margin-left: 10px; 
+            transition: 1.0s;
+            &:hover {
+                background-color: blue;
+            }
+        }
+        &.active {
+            color: rgb(12, 124, 236);
+        } 
+    }
+}
+</style>
