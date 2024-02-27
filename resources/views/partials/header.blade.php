@@ -1,54 +1,70 @@
-<script>
-export default {
-    data() {
-        return {
-            items: ['CHARACTER', 'COMICS', 'MOVIES', 'TV', 'GAMES', 'COLLECTIBLES', 'VIDEO', 'FANS', 'NEWS', 'SHOP']
-        };
-    },
-    methods: {
-         console.log(items)
-   }
-}
-</script>
+@php
+    $links = [
+        [
+            'url' => '/character',
+            'label' => 'Character',
+        ],
+        [
+            'url' => '/comics',
+            'label' => 'Comics',
+        ],
+        [
+            'url' => '/movies',
+            'label' => 'Movies',
+        ],
+        [
+            'url' => '/tv',
+            'label' => 'Tv',
+        ],
+        [
+            'url' => '/games',
+            'label' => 'Games',
+        ],
+        [
+            'url' => '/collectbles',
+            'label' => 'Collectbles',
+        ],
+        [
+            'url' => '/videos',
+            'label' => 'Videos',
+        ],
+        [
+            'url' => '/fans',
+            'label' => 'Fans',
+        ],
+        [
+            'url' => '/news',
+            'label' => 'News',
+        ],
+    ];
+@endphp
 
 
-    <header>
-        
-        <div class="nav-bar">
-            <div>
-                <img src="C:\Users\stefa\classe 114 boolean\vite-template\dc-logo.png" alt="">
-            </div>
-            <ul class="contenitore-ul active">
-              <li>
-                
-              </li>
-            </ul>
+
+<header>
+    <section>
+        <div class="bg-primary text-light d-flex justify-content-end">
+            
+            <section class="d-flex align-items-center">
+                <div class="container d-flex align-items-center justify-content-between">
+                       
+                    @foreach ($links as $link)
+                            <li>
+                                <a href="{{$link['url'] }}">
+                                    {{$link['label'] }}
+                                </a>
+                            </li>
+                        @endforeach
+                </div>
+                <span class="mx-5">
+                    DC POWER VISA
+                </span>
+            </section>
         </div>
-    </header>
+        
 
-
-<style lang="scss" scoped>
-.nav-bar {
-    width: 100%;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    .contenitore-ul {
-        display: flex;
-        align-items: center;
-        margin-left: 500px;
-        > li {
-            list-style: none;
-            padding: 0px;
-            margin-left: 10px; 
-            transition: 1.0s;
-            &:hover {
-                background-color: blue;
-            }
-        }
-        &.active {
-            color: rgb(12, 124, 236);
-        } 
-    }
-}
-</style>
+        
+    </section>
+    <section class="jumbo--container">
+    </section>
+</header>
